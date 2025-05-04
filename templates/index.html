@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>An Optimal Samples Selection System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-4">
+  <h2 class="text-center mb-4">An Optimal Samples Selection System</h2>
+
+  <!-- Display Flash Messages -->
+  {% with msgs = get_flashed_messages(with_categories=true) %}
+    {% if msgs %}
+      {% for c, msg in msgs %}
+        <div class="alert alert-{{c}} alert-dismissible fade show">
+          {{msg}} <button class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <!-- Parameter Input Form -->
+  <form method="POST">
+    <div class="row g-3">
+      <div class="col-md-2">
+        <label class="form-label">m (45 ≤ m ≤ 54)</label>
+        <input type="number" name="m" class="form-control" value="{{ params.get('m', '') }}" required min="45" max="54">
+      </div>
+      <div class="col-md-2">
+        <label class="form-label">n (7 ≤ n ≤ 25)</label>
+        <input type="number" name="n" class="form-control" value="{{ params.get('n', '') }}" required min="7" max="25">
+      </div>
+      <div class="col-md-2">
+        <label class="form-label">k (4 ≤ k ≤ 7)</label>
+        <input type="number" name="k" class="form-control" value="{{ params.get('k', '') }}" required min="4" max="7">
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">j (s ≤ j ≤ k)</label>
+        <input type="number" name="j" class="form-control" value="{{ params.get('j', '') }}" required min="3" max="7">
+      </div>
+      <div class="col-md-2">
+        <label class="form-label">s (3 ≤ s ≤ 7)</label>
+        <input type="number" name="s" class="form-control" value="{{ params.get('s', '') }}" required min="3" max="7">
+      </div>
+    </div>
+  
+    <div class="row g-3 mt-2">
+      <div class="col-md-3">
+        <label class="form-label">At least s-groups</label>
+        <input class="form-control" type="number" name="at_least_s_groups"
+               value="{{ params.get('at_least_s_groups', 1) }}" min="1" required>
+      </div>
+      <div class="col-md-9">
+        <label class="form-label">Manual samples (space-separated)</label>
+        <input class="form-control" type="text" name="manual_samples"
+               value="{{ params.get('manual_samples', '') }}">
+      </div>
+    </div>
+  
+    <!-- Action Buttons -->
+    <div class="col-12 d-flex gap-2 mt-3">
+      <button name="action" value="execute" class="btn btn-primary flex-fill">Execute</button>
+      <button name="action" value="store" class="btn btn-success flex-fill" formnovalidate>Store</button>
+      <button name="action" value="clear" class="btn btn-secondary flex-fill" formnovalidate>Clear</button>
+    </div>
+  </form>
+
+  <!-- Preview Section -->
+  {% if preview %}
+    <h4 class="mt-4">Preview (Not Stored)</h4>
+    <p><strong>Selected samples:</strong> {{preview.samples|join(', ')}}</p>
+    <details>
+      <summary>{{preview.k_sets|length}} k-sets (click to expand)</summary>
+      <pre class="mt-2">{{ preview.k_sets | map('join', ', ') | join('\n') }}</pre>
+    </details>
+  {% endif %}
+
+  <!-- History Section -->
+  <h4 class="mt-5">History</h4>
+  {% if runs %}
+  <table class="table table-sm table-striped">
+    <thead>
+      <tr><th>ID</th><th>Stamp</th><th># of k-sets</th><th>Actions</th></tr>
+    </thead>
+    <tbody>
+      {% for r in runs %}
+      <tr>
+        <td>{{r[0]}}</td>
+        <td>{{r[1]}}</td>
+        <td>{{r[2]}}</td>
+        <td>
+          <a class="btn btn-danger btn-sm" href="{{url_for('delete_run', run_id=r[0])}}" onclick="return confirm('Are you sure to delete?')">Delete</a>
+          <button class="btn btn-secondary btn-sm" data-bs-toggle="collapse" data-bs-target="#row{{r[0]}}">View</button>
+        </td>
+      </tr>
+      <tr class="collapse" id="row{{r[0]}}">
+        <td colspan="4">
+          <strong>Selected samples:</strong> {{r[3] or 'No samples'}}<br>
+          <pre class="mb-0">{{r[4] or 'No k-sets'}}</pre>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <p>No records yet.</p>
+  {% endif %}
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
