@@ -31,9 +31,16 @@ weather:2025--2021
 2. 安装依赖：
 
 ```bash
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 pip install xgboost
 ```
+```cmd
+python VMD_XGBoost.py
+python app.py
+```
+
 ---
 ## ⚡ 系统亮点
 当前系统的核心算法为 XGBoost，通过以下方式增强：
@@ -43,4 +50,5 @@ pip install xgboost
 架构层面：分层建模适应不同球队特性
 
 动态层面：贝叶斯模型实现实时修正
+
 ---
