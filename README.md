@@ -11,15 +11,27 @@ _1.	American Football Match Prediction System (AFMPS)_
 
 ---
 ## 🛠️ 数据库
+
 **2025--2010** 3903条  2009--2000时间跨度太大，参考意义不大
+
 weather:2025--2021
+
+Table:
+
 `change_requests`
+
 `configuration_items`
+
 `games`
+
 `periods`:存储每个季度的得分
+
 `teams`
+
 `venues`
+
 `players`
+
 ---
 ## 📁 项目结构
 
