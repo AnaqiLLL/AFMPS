@@ -1,0 +1,24 @@
+from github import Github
+import pandas as pd
+
+# 使用你的GitHub token进行身份验证
+g = Github("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")
+repo = g.get_repo("AnaqiLLL/AFMPS")
+
+# 获取提交历史
+commits = repo.get_commits()
+
+# 创建一个数据框，记录提交信息
+commit_data = []
+for commit in commits:
+    commit_data.append({
+        "Committer": commit.committer.login,
+        "Date": commit.committer.date,
+        "Message": commit.commit.message
+    })
+
+# 将数据保存为CSV报告
+df = pd.DataFrame(commit_data)
+df.to_csv('CSR_report.csv', index=False)
+
+print("CSR Report Generated!")
