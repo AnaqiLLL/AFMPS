@@ -1,5 +1,6 @@
 # AFMPS 美式橄榄球胜率预测系统
 _1.	American Football Match Prediction System (AFMPS)_
+![Uploading image.png…]()
 
 ## 📝 项目简介
 
