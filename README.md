@@ -1,6 +1,6 @@
 # AFMPS 美式橄榄球胜率预测系统
 _1.	American Football Match Prediction System (AFMPS)_
-\AF.png
+\config\AF.png
 
 ## 📝 项目简介
 
@@ -12,30 +12,32 @@ _1.	American Football Match Prediction System (AFMPS)_
 
 ---
 ## 🛠️ 数据库
-
 **2025--2010** 3903条  2009--2000时间跨度太大，参考意义不大
-
 weather:2025--2021
-
-Table:
-
 `change_requests`
-
 `configuration_items`
-
 `games`
-
 `periods`:存储每个季度的得分
-
 `teams`
-
 `venues`
-
 `players`
 
+软件配置管理（SCM）
+`version_control`:版本控制
+`change_requests`:变更管理
+`configurations`:配置管理
 ---
 ## 📁 项目结构
-
+AFMPS/
+├── app.py
+├── VMD_XGBoost.py
+├── requirements.txt
+├── scaler.pkl
+├── hierarchical_model.joblib
+├── AFMPS.db
+├── templates/
+├── static/
+└── README.md
 ---
 
 ## 安装
@@ -46,14 +48,10 @@ Table:
 ```bash
 python -m venv venv
 venv\Scripts\activate
+
 pip install -r requirements.txt
 pip install xgboost
 ```
-```cmd
-python VMD_XGBoost.py
-python app.py
-```
-
 ---
 ## ⚡ 系统亮点
 当前系统的核心算法为 XGBoost，通过以下方式增强：
@@ -63,5 +61,4 @@ python app.py
 架构层面：分层建模适应不同球队特性
 
 动态层面：贝叶斯模型实现实时修正
-
 ---
