@@ -65,25 +65,45 @@ AFMPS/
 └── teams.html
 
 └── css/
+  
   └── history.css
+  
   └── home.css
+  
   └── login.css
+  
   └── profile.css
+  
   └── teams.css
+  
   └── data.css
   
 └── data/
+
   └── predictions.html
+
 └── js/
+
   └── history.js
+  
   └── home.js
+  
   └── login.js
+  
   └── profile.js
+  
   └── teams.js
+  
   └── data.js
   
 
 ├── use/
+
+└── api/
+
+  └── app.py
+  
+└── AFMPS.db
 
 └── README.md
 
