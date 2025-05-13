@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>队伍资料 - 橄榄球数据系统</title>
+    <link rel="stylesheet" href="css/teams.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NFL队伍资料库</h1>
+            <p>查看所有NFL球队的详细信息和球员名单</p>
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回主页</a>
+        </header>
+
+        <div class="filter-container">
+            <div class="search-filter">
+                <input type="text" id="searchInput" placeholder="搜索球队...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="stats-summary">
+            <div class="stat-card">
+                <h3>总球队数</h3>
+                <p id="totalTeams">0</p>
+            </div>
+        </div>
+
+        <div class="teams-container" id="teamsContainer">
+            <!-- 队伍卡片将通过JavaScript动态加载 -->
+            <div class="loading">
+                <p>加载中，请稍候...</p>
+                <div class="spinner"></div>
+            </div>
+        </div>
+
+        <div class="pagination" id="pagination">
+            <!-- 分页控件将通过JavaScript动态加载 -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 橄榄球数据系统 | 数据来源于NFL官方</p>
+    </footer>
+
+    <script src="js/teams.js"></script>
+</body>
+</html>

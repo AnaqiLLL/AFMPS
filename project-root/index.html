@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橄榄球数据预测系统</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="video-container">
+        <video id="bg-video" autoplay muted playsinline loop style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;">
+            <source src="../use/vedio.mp4" type="video/mp4">
+            您的浏览器不支持视频播放
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <nav class="side-nav">
+        <div class="nav-header">
+            <h1>数据预测系统</h1>
+        </div>
+        <ul class="nav-list">
+            <li><a href="login.html" class="nav-item">登录系统</a></li>
+            <li><a href="data/predictions.html" class="nav-item">胜率预测</a></li>
+            <li><a href="teams.html" class="nav-item">队伍资料</a></li>
+            <li><a href="history.html" class="nav-item">历史战绩</a></li>
+        </ul>
+    </nav>
+
+    <div class="slogan-container">
+        <h2 class="slogan-text">精准预测 · 沉浸体验</h2>
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

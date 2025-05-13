@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人信息页面</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="profile-header">
+            <div class="profile-avatar">
+                <img src="https://via.placeholder.com/150" alt="用户头像">
+            </div>
+            <div class="profile-info">
+                <h1>用户名</h1>
+                <p class="bio">这里是个人简介，可以写一些个人介绍和兴趣爱好。</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                    </div>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="btn edit-profile">编辑资料</button>
+            </div>
+        </header>
+
+        <main class="profile-content">
+            <section class="card favorite-teams">
+                <div class="card-header">
+                    <h2><i class="fas fa-users"></i> 喜欢的球队</h2>
+                    <button class="btn-add" id="addTeamBtn"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="card-body" id="teamsContainer">
+                    <div class="team-item">
+                        <img src="https://via.placeholder.com/80" alt="球队logo">
+                        <h3>巴塞罗那</h3>
+                        <p>西甲 | 成立于1899年</p>
+                        <div class="team-actions">
+                            <button class="btn-action"><i class="fas fa-heart"></i></button>
+                            <button class="btn-action"><i class="fas fa-bell"></i></button>
+                        </div>
+                    </div>
+                    <div class="team-item">
+                        <img src="https://via.placeholder.com/80" alt="球队logo">
+                        <h3>曼城</h3>
+                        <p>英超 | 成立于1880年</p>
+                        <div class="team-actions">
+                            <button class="btn-action"><i class="fas fa-heart"></i></button>
+                            <button class="btn-action"><i class="fas fa-bell"></i></button>
+                        </div>
+                    </div>
+                    <div class="team-item">
+                        <img src="https://via.placeholder.com/80" alt="球队logo">
+                        <h3>拜仁慕尼黑</h3>
+                        <p>德甲 | 成立于1900年</p>
+                        <div class="team-actions">
+                            <button class="btn-action"><i class="fas fa-heart"></i></button>
+                            <button class="btn-action"><i class="fas fa-bell"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card favorite-matches">
+                <div class="card-header">
+                    <h2><i class="fas fa-futbol"></i> 喜欢的比赛</h2>
+                    <button class="btn-add" id="addMatchBtn"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="card-body" id="matchesContainer">
+                    <div class="match-item">
+                        <div class="match-date">2023年12月10日 20:00</div>
+                        <div class="match-teams">
+                            <div class="team home-team">
+                                <img src="https://via.placeholder.com/40" alt="主队">
+                                <span>巴塞罗那</span>
+                            </div>
+                            <div class="match-score">
+                                <span>3 - 1</span>
+                            </div>
+                            <div class="team away-team">
+                                <img src="https://via.placeholder.com/40" alt="客队">
+                                <span>皇家马德里</span>
+                            </div>
+                        </div>
+                        <div class="match-info">西甲 | 第16轮</div>
+                        <div class="match-actions">
+                            <button class="btn-action"><i class="fas fa-heart"></i></button>
+                            <button class="btn-action"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="match-item">
+                        <div class="match-date">2023年12月5日 19:45</div>
+                        <div class="match-teams">
+                            <div class="team home-team">
+                                <img src="https://via.placeholder.com/40" alt="主队">
+                                <span>曼城</span>
+                            </div>
+                            <div class="match-score">
+                                <span>2 - 0</span>
+                            </div>
+                            <div class="team away-team">
+                                <img src="https://via.placeholder.com/40" alt="客队">
+                                <span>利物浦</span>
+                            </div>
+                        </div>
+                        <div class="match-info">英超 | 第15轮</div>
+                        <div class="match-actions">
+                            <button class="btn-action"><i class="fas fa-heart"></i></button>
+                            <button class="btn-action"><i class="fas fa-share-alt"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="profile-footer">
+            <p>&copy; 2023 体育爱好者社区. 保留所有权利.</p>
+        </footer>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

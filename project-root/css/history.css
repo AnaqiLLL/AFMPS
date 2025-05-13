@@ -1,0 +1,334 @@
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-card: #252525;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent-color: #00C8B5;  /* 从#4caf50改为#00C8B5 */
+    --accent-hover: #00a596;  /* 调整悬停颜色 */
+    --card-border: #333333;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --win-color: #00C8B5;     /* 从#4caf50改为#00C8B5 */
+    --loss-color: #f44336;
+    --tie-color: #ff9800;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center; /* 改为居中 */
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--card-shadow);
+}
+
+.year-filter {
+    margin: 0.5rem;
+}
+
+/* 可以删除.team-filter相关样式 */
+label {
+    margin-right: 0.5rem;
+    color: var(--text-secondary);
+}
+
+select {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    cursor: pointer;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--accent-color);
+}
+
+.stats-summary {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    flex: 1;
+    min-width: 200px;
+    margin: 0.5rem;
+    padding: 1.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.records-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.record-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.record-card:hover {
+    transform: translateY(-5px);
+}
+
+.record-header {
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.record-season {
+    font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.match-details {
+    padding: 1.5rem;
+}
+
+.teams-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.team-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.team-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+    font-size: 1rem;  /* 从原来的1.8rem减小到1.4rem */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.result {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.win {
+    background-color: var(--win-color);
+    color: white;
+}
+
+.loss {
+    background-color: var(--loss-color);
+    color: white;
+}
+
+.tie {
+    background-color: var(--tie-color);
+    color: white;
+}
+
+.match-info {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.info-label {
+    color: var(--text-secondary);
+}
+
+.info-value {
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.page-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.3rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.page-btn.active {
+    background-color: var(--accent-color);
+}
+
+.loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 1rem auto;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid var(--accent-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--card-border);
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+    }
+    
+    .stats-summary {
+        flex-direction: column;
+    }
+    
+    .records-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.record-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
