@@ -32,21 +32,58 @@ weather:2025--2021
 
 AFMPS/
 
-├── app.py
+├── AF.png
 
-├── VMD_XGBoost.py
+├── README.md
 
 ├── requirements.txt
 
-├── scaler.pkl
+├── model/
 
-├── hierarchical_model.joblib
+└── README.md
 
-├── AFMPS.db
+└── __init__.py
 
-├── templates/
+└── hierarchical_model.joblib
 
-├── static/
+└── model_def.py
+
+└── VMD_XGBoost.py
+
+└── __pycache__/
+
+├── project-root/
+
+└── history.html
+
+└── index.html
+
+└── login.html
+
+└── profile.html
+
+└── teams.html
+
+└── css/
+  └── history.css
+  └── home.css
+  └── login.css
+  └── profile.css
+  └── teams.css
+  └── data.css
+  
+└── data/
+  └── predictions.html
+└── js/
+  └── history.js
+  └── home.js
+  └── login.js
+  └── profile.js
+  └── teams.js
+  └── data.js
+  
+
+├── use/
 
 └── README.md
 
