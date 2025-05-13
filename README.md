@@ -29,15 +29,25 @@ weather:2025--2021
 `configurations`:配置管理
 ---
 ## 📁 项目结构
+
 AFMPS/
+
 ├── app.py
+
 ├── VMD_XGBoost.py
+
 ├── requirements.txt
+
 ├── scaler.pkl
+
 ├── hierarchical_model.joblib
+
 ├── AFMPS.db
+
 ├── templates/
+
 ├── static/
+
 └── README.md
 ---
 
